@@ -4,6 +4,7 @@ author: "Temi A. Sorungbe"
 date: "May 11, 2016"
 output: 
   html_document: 
+    fig_caption: yes
     keep_md: yes
 ---
 Set working directory and libraries
@@ -30,7 +31,7 @@ tstep_pday <- tapply(data$step, as.factor(data$date), sum, na.rm = T)
 
 #histogram of the total number of steps taken per day
 hist(tstep_pday, freq= T, main = "Histogram of total number of steps taken each day", 
-     xlab="Total steps taken each day", ylab = "Frequency (days)")
+     xlab="", ylab = "Frequency (days)")
 
 #mean and median of the total number of steps per day
 r <- as.list(summary(tstep_pday))
@@ -63,7 +64,7 @@ data$steps[is.na(data$steps) == T] <- round(mean(avg_da, na.rm = T))
 t2step_pday <- tapply(data$step, as.factor(data$date), sum, na.rm = T)
 
 hist(t2step_pday, freq= T, main = "Histogram of total number of steps taken each day", 
-     xlab="Total steps taken each day", ylab = "Frequency (days)")
+     xlab="", ylab = "Frequency (days)")
 
 #mean and median of the total number of steps per day
 r2 <- as.list(summary(t2step_pday))
@@ -122,6 +123,6 @@ plot(unique(data$interval), avg_wkend, type ="l", col = "blue")
 
 title (main = "Weekend")
 
-title(xlab = "Interval", ylab = "Number of steps", outer = T)
+title(xlab = "5 minute interval", ylab = "Number of steps", outer = T)
 
 dev.off()

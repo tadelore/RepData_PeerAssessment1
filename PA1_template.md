@@ -46,7 +46,7 @@ tstep_pday <- tapply(data$step, as.factor(data$date), sum, na.rm = T)
 
 #histogram of the total number of steps taken per day
 hist(tstep_pday, freq= T, main = "Histogram of total number of steps taken each day", 
-     xlab="Total steps taken each day", ylab = "Frequency (days)")
+     xlab="", ylab = "Frequency (days)")
 ```
 
 ![](PA1_template_files/figure-html/Q1-1.png)<!-- -->
@@ -99,7 +99,7 @@ data$steps[is.na(data$steps) == T] <- round(mean(avg_da, na.rm = T))
 t2step_pday <- tapply(data$step, as.factor(data$date), sum, na.rm = T)
 
 hist(t2step_pday, freq= T, main = "Histogram of total number of steps taken each day", 
-     xlab="Total steps taken each day", ylab = "Frequency (days)")
+     xlab="", ylab = "Frequency (days)")
 ```
 
 ![](PA1_template_files/figure-html/Q3-1.png)<!-- -->
@@ -172,7 +172,7 @@ plot(unique(data$interval), avg_wkend, type ="l", col = "blue")
 
 title (main = "Weekend")
 
-title(xlab = "Interval", ylab = "Number of steps", outer = T)
+title(xlab = "5 minute interval", ylab = "Number of steps", outer = T)
 ```
 
 ![](PA1_template_files/figure-html/Q4-1.png)<!-- -->
